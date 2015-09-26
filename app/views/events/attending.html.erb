@@ -1,0 +1,25 @@
+<h1>Events You're Attending</h1>
+
+<% if signed_in? %>
+<table class="table-minimal">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Dates</th>
+      <th>Attendees</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= link_to event.name, event_path(event) %></td>
+        <td><%= event.location %></td>
+        <td><%= event.dates%></td>
+        <td><%= event.users.count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>

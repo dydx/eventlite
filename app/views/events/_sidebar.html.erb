@@ -3,7 +3,7 @@
 <ul>
   <li><%= link_to "Create An Event", new_event_path %></li>
   <li><%= link_to "Events I'm Hosting", hosting_event_path(current_user) %></li>
-  <li><%= link_to "Events I'm Attending" %></li>
+  <li><%= link_to "Events I'm Attending", attending_event_path(current_user) %></li>
 </ul>
 <% else %>
   <p>You need to sign in to have any event actions</p>
