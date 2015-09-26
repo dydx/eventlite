@@ -13,7 +13,7 @@
     </nav>
     <div class="navigation-tools">
       <% if signed_in? %>
-        <%= link_to current_user.email, edit_user_registration_path(current_user) %>
+        <span class="username"><%= current_user.email %></span>
         <%= link_to "Log Out", destroy_user_session_path, :class => "sign-up", method: :delete %>
       <% else %>
         <%= link_to "Sign Up", new_user_registration_path, :class => "sign-up" %>
