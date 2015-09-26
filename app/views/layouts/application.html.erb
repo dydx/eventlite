@@ -15,7 +15,12 @@
   <% end %>
 
   <div class="container">
-    <%= yield %>
+    <aside class="sidebar">
+      <%= render 'events/sidebar' %>
+    </aside>
+    <section class="content">
+      <%= yield %>
+    </section>
   </div>
 
 </body>

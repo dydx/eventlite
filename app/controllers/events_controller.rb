@@ -11,6 +11,11 @@ class EventsController < ApplicationController
     end
   end
 
+  def hosting
+    @events = Event.where(user_id: current_user.id)
+    render 'events/hosting'
+  end
+
   # GET /events
   # GET /events.json
   def index

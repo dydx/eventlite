@@ -1,5 +1,6 @@
-<h1>Upcoming Events</h1>
+<h1>Events You're Hosting</h1>
 
+<% if signed_in? %>
 <table class="table-minimal">
   <thead>
     <tr>
@@ -21,3 +22,4 @@
     <% end %>
   </tbody>
 </table>
+<% end %>

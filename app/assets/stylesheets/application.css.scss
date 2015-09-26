@@ -7,7 +7,17 @@
 @import 'refills/tables-minimal';
 
 .container {
+  margin-top: 1em;
   @include outer-container;
+}
+
+.sidebar {
+  @include span-columns(3);
+}
+
+.content {
+  @include span-columns(9);
+  @include omega();
 }
 
 /*
