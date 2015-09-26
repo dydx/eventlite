@@ -10,6 +10,10 @@
 
   <%= render 'refills/navigation' %>
 
+  <% if notice %>
+    <%= render 'refills/flashes' %>
+  <% end %>
+
   <div class="container">
     <%= yield %>
   </div>

@@ -3,6 +3,7 @@
 @import 'neat';
 
 @import 'refills/navigation';
+@import 'refills/flashes';
 
 .container {
   @include outer-container;
