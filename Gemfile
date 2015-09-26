@@ -47,3 +47,9 @@ end
 
 # user auth
 gem 'devise'
+
+# bourbon stuff
+gem 'bourbon'
+gem 'neat'
+gem 'bitters'
+gem 'refills'
