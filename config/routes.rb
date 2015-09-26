@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
-  resources :events, :path => ''
+  resources :events, :path => '' do
+    member do
+      post 'attend'
+    end
+  end
   devise_for :users
 end

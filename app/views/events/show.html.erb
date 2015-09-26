@@ -16,7 +16,6 @@
 <%= @event.dates %>
 </p>
 
-<p>
 <strong>Host:</strong>
 <%= @event.host.email %>
 </p>
@@ -28,6 +27,10 @@
     <li><%= attendee.email %></li>
   <% end %>
 </ul>
+</p>
+
+<p>
+<%= link_to "Attend This Event", attend_event_path(@event), method: :post %>
 </p>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |

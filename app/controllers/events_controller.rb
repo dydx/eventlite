@@ -1,6 +1,16 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
+  def attend
+    @event = Event.find_by_id(params[:id])
+    if !@event.users.include? current_user
+      @event.users << current_user
+      redirect_to @event, notice: 'Thanks for Attending. See you soon!'
+    else
+      redirect_to @event, notice: 'You are already attending this event!'
+    end
+  end
+
   # GET /events
   # GET /events.json
   def index
@@ -71,6 +81,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:name, :description, :location, :start_datetime, :end_datetime, :user_id)
+      params.require(:event).permit(:name, :description, :location, :start_datetime, :end_datetime, :user_id, :users)
     end
 end
