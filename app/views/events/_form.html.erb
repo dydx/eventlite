@@ -23,13 +23,13 @@
     <%= f.label :location %><br>
     <%= f.text_field :location %>
   </div>
-  <div class="field">
+
     <%= f.label :start_datetime %><br>
-    <%= f.datetime_select :start_datetime %>
-  </div>
+    <%= f.datetime_local_field :start_datetime %>
+
   <div class="field">
     <%= f.label :end_datetime %><br>
-    <%= f.datetime_select :end_datetime %>
+    <%= f.datetime_local_field :end_datetime %>
   </div>
   <div class="field">
     <%= f.label :user_id %><br>
