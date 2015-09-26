@@ -1,34 +1,35 @@
 <p id="notice"><%= notice %></p>
 
+<h1><%= @event.name %></h1>
+
 <p>
-  <strong>Name:</strong>
-  <%= @event.name %>
+<%= @event.description %>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @event.description %>
+<strong>Location:</strong>
+<%= @event.location %>
 </p>
 
 <p>
-  <strong>Location:</strong>
-  <%= @event.location %>
+<strong>Dates:</strong>
+<%= @event.dates %>
 </p>
 
 <p>
-  <strong>Start datetime:</strong>
-  <%= @event.start_datetime %>
+<strong>Host:</strong>
+<%= @event.host.email %>
 </p>
 
 <p>
-  <strong>End datetime:</strong>
-  <%= @event.end_datetime %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @event.user.email %>
+<strong>Attendees:</strong>
+<ul>
+  <% @event.users.each do |attendee| %>
+    <li><%= attendee.email %></li>
+  <% end %>
+</ul>
 </p>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Destroy', event_path(@event), method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', events_path %>
