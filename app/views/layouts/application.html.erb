@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<div class="wrapper-for-content-outside-of-footer">
+
   <%= render 'refills/navigation' %>
 
   <% if notice %>
@@ -22,6 +24,8 @@
       <%= yield %>
     </section>
   </div>
+
+  <%= render 'refills/footer_2' %>
 
 </body>
 </html>
