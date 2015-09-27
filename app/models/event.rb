@@ -7,10 +7,20 @@ class Event < ActiveRecord::Base
 
   def dates
     if on_the_same_day?(start_datetime, end_datetime)
-      "#{start_datetime.strftime('%b %d')} from #{start_datetime.strftime('%I:%M')} to #{end_datetime.strftime('%I:%M')}"
+      "#{month_day(start_datetime)} from #{time_of_day(start_datetime)} to #{time_of_day(end_datetime)}"
     else
-      "#{start_datetime.strftime('%b %d')} at #{start_datetime.strftime('%I:%M')} to #{end_datetime.strftime('%b %d')} at #{end_datetime.strftime('%I:%M')}"
+      "#{month_day(start_datetime)} at #{time_of_day(start_datetime)} to #{month_day(end_datetime)} at #{time_of_day(end_datetime)}"
     end
+  end
+
+private
+
+  def month_day(datetime)
+    "#{datetime.strftime('%b %d')}"
+  end
+
+  def time_of_day(datetime)
+    "#{datetime.strftime('%I:%M')}"
   end
 
   def on_the_same_day?(datetime1, datetime2)
