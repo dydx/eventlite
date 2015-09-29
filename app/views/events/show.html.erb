@@ -28,9 +28,11 @@
 </ul>
 </p>
 
+<% if signed_in? %>
 <p>
 <%= link_to "Attend This Event", attend_event_path(@event), method: :post %>
 </p>
+<% end %>
 
 <% if signed_in? && @event.user_id == current_user.id %>
   <%= link_to 'Edit', edit_event_path(@event) %> |
